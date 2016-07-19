@@ -31,7 +31,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int FILE_CHOOSER_RESULT_CODE = 1;
+    private static final int FILE_CHOOSER_RESULT_CODE = 1000;
     private ValueCallback<Uri> mUploadMessage;
     private ValueCallback<Uri[]> mFilePathCallback;
 
@@ -137,8 +137,14 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, intent);
 
         if (resultCode != Activity.RESULT_OK || intent == null) {
-            mUploadMessage = null;
-            mFilePathCallback = null;
+            if (mUploadMessage != null) {
+                mUploadMessage.onReceiveValue(null);
+                mUploadMessage = null;
+            }
+            if (mFilePathCallback != null) {
+                mFilePathCallback.onReceiveValue(null);
+                mFilePathCallback = null;
+            }
             return;
         }
 
@@ -151,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
             String path = getPath(this, originalUri);
 
             if (path == null) {
-                mUploadMessage.onReceiveValue(Uri.parse(""));
+                mUploadMessage.onReceiveValue(null);
                 mUploadMessage = null;
                 return;
             }
