@@ -82,11 +82,11 @@ public class MainActivity extends AppCompatActivity {
                 openFileChooser(uploadMsg, "", "");
             }
 
-            public void openFileChooser( ValueCallback uploadMsg, String acceptType ) {
+            public void openFileChooser(ValueCallback uploadMsg, String acceptType) {
                 openFileChooser(uploadMsg, "", "");
             }
 
-            public void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType, String capture){
+            public void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType, String capture) {
                 if (Build.VERSION.SDK_INT < 19) {
                     new AlertDialog.Builder(MainActivity.this)
                             .setMessage("ご使用のAndroidのバージョンでは、ファイルアップロード機能をサポートしていません。")
