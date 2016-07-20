@@ -1,8 +1,9 @@
-== README
+== README 
 
-Androidでファイルアップロードを行うための、サンプルコードです。  
-(OK SKYでは、チャットルームに画像、動画、音声などのファイルを投稿できます。  
-Android端末でファイルを投稿するためには、サンプルコードに記載したような処理が必要となります。)  
+AndroidでOK SKYを使用するためのサンプルコードです。  
+サンプルコードの処理を追加することで、以下のことが可能になります。  
+・ファイルアップロード  
+・リンクを含むメッセージでのHTTPコンテンツの表示  
 
 **サンプルコードで対象としているAndroidのバージョン**  
 Android 4.4 (KitKat) 以上
@@ -19,11 +20,13 @@ MainActivity.java
 を参考にして、  
 以下の内容を追加してください。
 
-1. WebViewのインスタンスに、setWebChromeClientで、WebChromeClientのインスタンスをセットする。
+1. WebViewのインスタンスに、setWebChromeClientで、WebChromeClientのインスタンスをセットする。  
+(onShowFileChooserなどの、サンプルコードに記載したメソッドをOverrideする。)
 2. onActivityResultに、ダイアログでファイルが選択された場合の処理を追加する。  
 (onActivityResultがない場合は、新しく作成する。)
 3. 1、2の手順で追加した処理で使用されているフィールドを追加する。
-
+4. webViewのインスタンスから、getSettingsでWebSettingsのインスタンスを取得し、  
+WebSettingsのインスタンスにsetMixedContentModeで、WebSettings.MIXED_CONTENT_COMPATIBILITY_MODEをセットする。
 
 **処理についての説明**  
 `openFileChooser(ValueCallback<Uri> uploadMsg)`  
@@ -48,6 +51,12 @@ Android 5.0以上で、input type="file"の選択ボタンが押された場合�
 ファイル選択ダイアログでファイルが選択された場合に呼び出される処理です。  
 2つ目の引数のresultCodeに、startActivityForResultで指定したcodeが渡されます。  
 その値を使用して、実行された処理がファイルアップロードであることを判別します。
+
+`setMixedContentMode(int mode)`  
+安全でないオリジンからのコンテンツの読み込みを許可するかを指定します。  
+Android 5.0以上では、デフォルトでMIXED_CONTENT_NEVER_ALLOWが設定されているので、  
+MIXED_CONTENT_COMPATIBILITY_MODEをセットすることで、  
+HTTPコンテンツの読み込みを可能にします。
 
 **フィールドについての説明**  
 `ValueCallback<Uri> mUploadMessage`  
