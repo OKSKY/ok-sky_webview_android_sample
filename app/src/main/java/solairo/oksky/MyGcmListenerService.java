@@ -70,8 +70,8 @@ public class MyGcmListenerService extends GcmListenerService {
 
         Log.d("GCM", "Message : " + message);
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        /*NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.ic_stat_ic_notification)
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
                 .setContentTitle("GCM Message")
                 .setContentText(message)
                 .setAutoCancel(true)
@@ -79,8 +79,8 @@ public class MyGcmListenerService extends GcmListenerService {
                 .setContentIntent(pendingIntent);
 
         NotificationManager notificationManager =
-                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);*/
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-        //notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
     }
 }
