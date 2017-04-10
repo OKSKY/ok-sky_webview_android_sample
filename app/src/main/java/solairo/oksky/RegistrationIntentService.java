@@ -3,6 +3,7 @@ package solairo.oksky;
 import android.app.IntentService;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
@@ -11,7 +12,16 @@ import com.google.android.gms.gcm.GcmPubSub;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.android.gms.iid.InstanceID;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URI;
+import java.net.URL;
+
+
+import javax.net.ssl.HttpsURLConnection;
 
 /**
  * Created by mark on 2017/04/10.
@@ -73,7 +83,18 @@ public class RegistrationIntentService extends IntentService{
      * @param token The new token.
      */
     private void sendRegistrationToServer(String token) {
-        // Add custom implementation, as needed.
+        HttpsURLConnection urlConnection = null;
+        try {
+            URL url = new URL(getServerUrl(token));
+            urlConnection = (HttpsURLConnection) url.openConnection();
+            urlConnection.connect();
+            int responseCode = urlConnection.getResponseCode();
+            Log.d("GCM", "Server responded with a status code=" + responseCode);
+        } catch(Exception e) {
+            e.printStackTrace();
+        } finally {
+            urlConnection.disconnect();
+        }
     }
 
     /**
@@ -88,6 +109,10 @@ public class RegistrationIntentService extends IntentService{
         for (String topic : TOPICS) {
             pubSub.subscribe(token, "/topics/" + topic, null);
         }
+    }
+
+    public String getServerUrl(String token) {
+        return "https://solairo-co.ok-sky.com/customers/provider_login?login_key=customer_code&client_code=solairo-co-513EC0D8C7E7BF27&customer_code=100120008&sns_device_type=android&sns_device_token=" + token;
     }
     // [END subscribe_topics]
 
