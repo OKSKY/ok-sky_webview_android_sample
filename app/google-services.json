@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "1079354390488",
+    "firebase_url": "https://oksky-chat.firebaseio.com",
+    "project_id": "oksky-chat",
+    "storage_bucket": "oksky-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079354390488:android:0f2e051c374acc3b",
+        "android_client_info": {
+          "package_name": "solairo.oksky"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1079354390488-dstbh95ca5n4lu1cjplvlard0s88i1gt.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1079354390488-2lrn2l2b0068ug8bl3e289cidlpmp502.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1079354390488-i5kvdek1fj7hb7e9cer2gh50ong8tsck.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1079354390488-5mp54r83qeplkr001kpj57pmbio27t5r.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1079354390488-kdb4hu9ptlr5gm1m80dbt7kt84n1dsqu.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1079354390488-60ofb35059pc01ea9pjpsqodca0dob7q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfe8J-gDXGZdVl3DRraQVW7307or80Hmk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -71,3 +71,8 @@ Android 5.0 以上でファイルアップロードが行われた場合に、
 OK SKYでサポートしているContent-Type、拡張子のMapです。  
 サンプルコードでは、ファイル名に拡張子がついているファイルのみを、  
 アップロードの対象としています。
+
+
+## Google Cloud Messaging
+
+<span

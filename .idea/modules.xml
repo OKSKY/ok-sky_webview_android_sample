@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/OkSky.iml" filepath="$PROJECT_DIR$/OkSky.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ok-sky_webview_android_sample.iml" filepath="$PROJECT_DIR$/ok-sky_webview_android_sample.iml" />
     </modules>
   </component>
 </project>
