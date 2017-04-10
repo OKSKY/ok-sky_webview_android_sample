@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "376556372364",
+    "firebase_url": "https://ok-skywebviewandroidsample.firebaseio.com",
+    "project_id": "ok-skywebviewandroidsample",
+    "storage_bucket": "ok-skywebviewandroidsample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376556372364:android:0f2e051c374acc3b",
+        "android_client_info": {
+          "package_name": "solairo.oksky"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376556372364-775edtp8df1ocl2smq6qm8n2u2vigtpm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "solairo.oksky",
+            "certificate_hash": "0aa214d03464d7ee6b5e49dda9b81b13dccc62d1"
+          }
+        },
+        {
+          "client_id": "376556372364-cdifpdq1uoc5nbdg89f9bta5tr3m8u0j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJCIL8NyG-67zgjxbwjdB4eOuqATZB1Hg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376556372364-cdifpdq1uoc5nbdg89f9bta5tr3m8u0j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
